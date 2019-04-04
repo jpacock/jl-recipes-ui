@@ -1,0 +1,16 @@
+<mat-accordion *ngIf="recipes">
+  <mat-expansion-panel *ngFor="let recipe of recipes">
+    <mat-expansion-panel-header >
+      <mat-panel-title class="capitalize"> 
+        {{recipe.title}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{recipe.description}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div *ngFor="let ingredient of recipe.ingredients">
+      {{ingredient.quantity}} {{ingredient.unit}} {{ingredient.item}}
+    </div>
+  </mat-expansion-panel>
+ 
+</mat-accordion>
