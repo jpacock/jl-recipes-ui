@@ -27,9 +27,10 @@ export class RecipesService {
   }
 
   private handleError(error: HttpErrorResponse) {
-
+    console.log('error')
     if (error.error instanceof ErrorEvent) {
       // errorMsg += "An error occurred:', error.error.message";
+    
     } else {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong,

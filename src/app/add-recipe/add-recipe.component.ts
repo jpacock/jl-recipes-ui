@@ -11,10 +11,10 @@ import { NgModule } from '@angular/core';
 })
 export class AddRecipeComponent implements OnInit {
 
-  title: String = "";
-  description: String = "";
-  ingredients: String = "";
-  directions: String = "";
+  title: string = "";
+  description: string = "";
+  ingredients: string = "";
+  directions: string = "";
 
   constructor(
     private recipeService: RecipesService
@@ -24,13 +24,25 @@ export class AddRecipeComponent implements OnInit {
   }
 
   addRecipe() {
-    console.log(this.title)
     // validate data
 
-    // Recipe newRecipe = new Recipe()
-
+    var newRecipe = new Recipe();
+    newRecipe.title = this.title;
+    newRecipe.description = this.description;
+    newRecipe.ingredients = this.ingredients.split('\n');
+    newRecipe.directions = this.directions.split('\n');
+    
+    console.log(newRecipe)
     // // api post
-    // this.recipeService.addRecipe()
+    this.recipeService.addRecipe(newRecipe)
+			.subscribe(
+				recipe => {
+          console.log(recipe);
+				},
+				error => {
+					console.log(error);
+				});
+
   }
 
 }

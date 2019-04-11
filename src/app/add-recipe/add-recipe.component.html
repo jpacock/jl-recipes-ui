@@ -5,17 +5,16 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>Description</mat-label>
-      <textarea matInput matTextareaAutosize matAutosizeMinRows=5
-        matAutosizeMaxRows=10></textarea>
+      <input matInput [(ngModel)]="description" name="description" >
     </mat-form-field>
     <mat-form-field>
       <mat-label>Ingredients</mat-label>
-      <textarea matInput matTextareaAutosize matAutosizeMinRows=5
+      <textarea matInput [(ngModel)]="ingredients" name="ingredients" matTextareaAutosize matAutosizeMinRows=5
         matAutosizeMaxRows=10></textarea>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Directions</mat-label>
-      <textarea matInput matTextareaAutosize matAutosizeMinRows=5
+      <textarea matInput [(ngModel)]="directions" name="directions" matTextareaAutosize matAutosizeMinRows=5
         matAutosizeMaxRows=10></textarea>
     </mat-form-field>
 
