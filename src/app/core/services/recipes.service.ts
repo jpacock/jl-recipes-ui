@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Recipe} from '../models/recipe'
+import { Recipe } from '../models/recipe'
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -14,11 +14,18 @@ export class RecipesService {
 
   getRecipes(): Observable<any> {
     return this.http.get<any[]>(this.url)
-    .pipe(
-      catchError(this.handleError)
-    )
+      .pipe(
+        catchError(this.handleError)
+      )
   }
-  
+
+  addRecipe(recipe: Recipe): Observable<Recipe> {
+    return this.http.post<Recipe>(this.url, recipe)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+
   private handleError(error: HttpErrorResponse) {
 
     if (error.error instanceof ErrorEvent) {
