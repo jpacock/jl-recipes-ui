@@ -3,12 +3,16 @@ pipeline {
 
     stages {
         stage ( 'Build' ) {
-            sh 'npm install'
-            sh 'ng build --prod'
+            steps{
+                sh 'npm install'
+                sh 'ng build --prod'
+            }
         }
 
         stage ( 'Deploy' ) {
-            sh 'echo "Hello"'
+            steps{
+                sh 'echo "hello world"'
+            }
         }
     }
 }
