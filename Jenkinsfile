@@ -1,17 +1,14 @@
 pipeline {
-    agent any
-
-    stages {
-        stage ( 'Build' ) {
-            steps{
-                sh 'npm install'
-                sh 'ng build --prod'
-            }
+    agent {
+        docker {
+            image 'node:6-alpine' 
+            args '-p 3000:3000' 
         }
-
-        stage ( 'Deploy' ) {
-            steps{
-                sh 'echo "hello world"'
+    }
+    stages {
+        stage('Build') { 
+            steps {
+                sh 'npm install' 
             }
         }
     }
