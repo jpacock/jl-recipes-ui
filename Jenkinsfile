@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Deployment'){
             steps {
-                withAWS(region:'us-west-2') {
+                withAWS(region:'us-west-2', credentials:'aws-jenkins-credentials') {
               s3Delete(bucket: 'jl-recipes', path:'**/*')
               s3Upload(bucket: 'jl-recipes', workingDir:'dist/jl-recipes-ui', includePathPattern:'**/*');
             }
