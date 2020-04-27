@@ -1,5 +1,6 @@
 import React from 'react';
-import {Flex, Box, Text, Link} from 'rebass';
+import { Flex, Box, Image, Text, Link } from 'rebass';
+import logo from './logo.png'
 
 
 function Navbar() {
@@ -7,12 +8,15 @@ function Navbar() {
         <Flex
             px={2}
             color='white'
-            bg='primary'
+            bg='#E39774'
             alignItems='center'
-            height='50'>
-            <Text p={2} fontWeight='bold'>JL Recipes</Text>
+            minHeight='80px'>
+            <Image src={logo} sx={{
+                width: 50,
+                
+            }} ></Image>
             <Box mx='auto' />
-            <Link variant='nav' href='#!'>
+            <Link variant='nav' href='#!' fontSize="50">
                 Profile
             </Link>
         </Flex>
@@ -21,4 +25,3 @@ function Navbar() {
 
 export default Navbar;
 
- 
