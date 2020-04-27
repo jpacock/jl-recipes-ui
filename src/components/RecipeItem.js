@@ -39,9 +39,7 @@ function RecipeItem(props) {
                         style={{
                                 "listStyleType": "none"
                         }}>
-                        <li>1 tsp Flour</li>
-                        <li>1 tsp Flour</li>
-                        <li>1 tsp Flour</li>
+                        {props.recipe.ingredients?.map(ingredient => <li>{ingredient}</li>)}
                     </ul>
                     <Heading 
                         as='h1'
@@ -52,9 +50,7 @@ function RecipeItem(props) {
                         style={{
                             "listStyleType": "none"
                         }}>
-                        <li>1. Open up spices</li>
-                        <li>2. Remoe the blank from the blank</li>
-                        <li>3. Start to mix in the asdf and the asdfk</li>
+                        {props.recipe.instructions?.map(instruction => <li>{instruction.step}. {instruction.text}</li>)}
                     </ul>
                 </Card>
             </Flex>

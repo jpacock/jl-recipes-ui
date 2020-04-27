@@ -44,7 +44,7 @@ class App extends React.Component {
         const filteredRecipes = this.state.recipes.filter(recipe => {
             return recipe.name.toLowerCase().indexOf(this.state.searchStr.toLowerCase()) > -1
         })
-        const recipes = filteredRecipes.map(item => <RecipeItem key={item.id} recipe={item} />)
+        const recipes = filteredRecipes.map(recipe => <RecipeItem key={recipe.id} recipe={recipe} />)
         const theme = {
             ...preset,
         }

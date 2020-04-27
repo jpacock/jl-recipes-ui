@@ -22,21 +22,34 @@ const recipesData = [
         id: "2",
         name: "Curry",
         description: "Spicy middle-eastern dish",
+        ingredients: [
+            "1 tsp sugar",
+            "1 tsp flour"
+        ],
     },
     {
         id: "3",
         name: "Dumplings",
         description: "Asian doughball filled with ingredients",
+        ingredients: [
+            "1 tsp sugar",
+            "1 tsp flour"
+        ],
     },
     {
         id: "4",
         name: "Hot and sour soup",
         description: "Tangy soup with a kick!",
+        ingredients: [
+            "1 tsp sugar",
+            "1 tsp flour"
+        ],
     },
     {
         id: "5",
         name: "Chicken tacos",
         description: "Tacos with pulled seasoned chicken",
+        
     },
 
 ]
