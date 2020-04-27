@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Card, Flex, Heading } from 'rebass';
+import { Box, Card, Flex, Heading, Text } from 'rebass';
 
 function RecipeItem(props) {
     return (
@@ -12,18 +12,23 @@ function RecipeItem(props) {
                     <Box
                         flex='1'
                         align
-                        p={5}
+                        p={1}
                         my={10}
                         fontSize={2}
                         color='white'
                         bg='primary'
                         padding='10'>
                         <Heading
+                            p={1}
                             fontSize={[3, 4, 5]}
                             color='white'>
                             {props.recipe.name}
                         </Heading>
-                        {props.recipe.description}
+                        <Text
+                            py={1}
+                            px={2}>
+                                {props.recipe.description}
+                        </Text>
                     </Box>
                     <Heading 
                         as='h1'
