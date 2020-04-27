@@ -1,10 +1,10 @@
 {
-  "name": "practice-2",
+  "name": "jl-recipes-ui",
   "version": "1.0.0",
-  "description": "Conditional Rendering Practice",
+  "description": "Recipe Application",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --open --hot --host 0.0.0.0",
     "build": "webpack"
   },
   "author": "Jordan Acock",

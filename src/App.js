@@ -1,11 +1,19 @@
 import React from 'react';
 
+import { ThemeProvider } from 'emotion-theming';
+import preset from '@rebass/preset';
+
+import Navbar from './components/Navbar'
+import RecipeItem from './components/RecipeItem'
+import recipesData from './data/recipesData'
+
 class App extends React.Component {
     
     constructor(){
         super();
         this.state = {
-            loggedIn: false
+            loggedIn: false,
+            recipes: recipesData
         }
         
         this.handleClick = this.handleClick.bind(this);
@@ -21,18 +29,19 @@ class App extends React.Component {
     }
 
     render () {
+        const recipes = this.state.recipes.map(item => <RecipeItem key={item.id} recipe={item}/>)
+        const theme = {
+            ...preset,
+        }
         return (
-            <div>
-                <div>
-                    {this.state.loggedIn ? "Logged In" : "Logged Out"}
-                </div>
-                <button type="Button" onClick={() => this.handleClick()} >
-                    {this.state.loggedIn ? "Log out" : "Log in"}
-                </button>
-                
-            </div>
+            <ThemeProvider theme={theme}>
+                <Navbar />
+                {recipes}
+            </ThemeProvider>
         )
-    } 
+    }
+
+
 }
 
 export default App;
