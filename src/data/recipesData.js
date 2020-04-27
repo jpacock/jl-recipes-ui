@@ -3,6 +3,20 @@ const recipesData = [
         id: "1",
         name: "Chicken Alfredo",
         description: "White colored pasta dish with chicken",
+        ingredients: [
+            "1 tsp sugar",
+            "1 tsp flour"
+        ],
+        instructions: [
+            {
+                step: 1,
+                text: "mix the flour."
+            },
+            {
+                step: 2,
+                text: "open up containers of blah blah blah"
+            }
+        ]
     },
     {
         id: "2",
