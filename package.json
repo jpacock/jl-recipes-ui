@@ -16,14 +16,15 @@
   "dependencies": {
     "@rebass/forms": "^4.0.6",
     "@rebass/preset": "^4.0.5",
-    "emotion-theming": "^10.0.27",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "rebass": "^4.0.7",
-    "react-scripts": "3.4.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2"
+    "@testing-library/user-event": "^7.1.2",
+    "emotion-theming": "^10.0.27",
+    "react": "^16.13.0",
+    "react-collapsible": "^2.7.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "3.4.1",
+    "rebass": "^4.0.7"
   },
   "browserslist": {
     "production": [
