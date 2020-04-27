@@ -37,7 +37,7 @@ function RecipeItem(props) {
                     </Heading>
                     <ul
                         style={{
-                                "list-style-type": "none"
+                                "listStyleType": "none"
                         }}>
                         <li>1 tsp Flour</li>
                         <li>1 tsp Flour</li>
@@ -50,7 +50,7 @@ function RecipeItem(props) {
                     </Heading>
                     <ul
                         style={{
-                            "list-style-type": "none"
+                            "listStyleType": "none"
                         }}>
                         <li>1. Open up spices</li>
                         <li>2. Remoe the blank from the blank</li>
