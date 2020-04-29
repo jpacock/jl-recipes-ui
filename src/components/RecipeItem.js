@@ -5,7 +5,7 @@ import Collapsible from 'react-collapsible';
 
 function RecipeItem(props){
     return (
-        <div>
+        <Box>
             <Flex>
                 <Card flex='1'
                     my='1'>
@@ -65,8 +65,8 @@ function RecipeItem(props){
                                 }}>
                                 {props.recipe.instructions?.map(instruction =>
                                     <li><Flex my={2} >
-                                            <Box mx={2} >{instruction.step}.</Box>
-                                            <Box>{instruction.text}</Box>
+                                            <Box minWidth="8px">{instruction.step}.</Box>
+                                            <Box padding="0px 10px">{instruction.text}</Box>
                                         </Flex>
                                     </li>)}
                             </ul>
@@ -74,7 +74,7 @@ function RecipeItem(props){
                     </Collapsible>
                 </Card>
             </Flex>
-        </div>
+        </Box>
 
     )
 }
