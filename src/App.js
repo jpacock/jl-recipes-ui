@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ThemeProvider } from 'emotion-theming';
 import preset from '@rebass/preset';
-import { Box } from 'rebass';
+import { Flex } from 'rebass';
 import { Input } from '@rebass/forms';
 
 import Navbar from './components/Navbar';
@@ -55,15 +55,16 @@ class App extends React.Component {
         return (
             <ThemeProvider theme={theme}>
                 <Navbar />
-                <Box>
+                <Flex>
                     <Input
+                        flex='1'
                         m={1}
                         id='email'
                         name='email'
                         placeholder='Find Recipe'
                         onChange={e => this.handleType(e.target.value)}
                     />
-                </Box>
+                </Flex>
                 {recipes}
             </ThemeProvider>
         )
