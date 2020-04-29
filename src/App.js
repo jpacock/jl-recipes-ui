@@ -55,10 +55,10 @@ class App extends React.Component {
         return (
             <ThemeProvider theme={theme}>
                 <Navbar />
-                <Flex>
+                <Flex my={2}>
                     <Input
                         flex='1'
-                        m={1}
+                        color='lightgray'
                         id='email'
                         name='email'
                         placeholder='Find Recipe'

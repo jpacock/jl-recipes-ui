@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Box, Image, Text, Link } from 'rebass';
+import { Flex, Box, Image, Link } from 'rebass';
 import logo from './logo.png'
 
 
