@@ -2,6 +2,8 @@ import React from 'react';
 import { Flex, Box, Image, Link } from 'rebass';
 import logo from './logo.png'
 
+import {FaPlus} from 'react-icons/fa'
+
 
 function Navbar() {
     return (
@@ -11,14 +13,13 @@ function Navbar() {
             bg='#E39774'
             alignItems='center'
             minHeight='80px'>
-            <Image src={logo} sx={{
+            <a href="/" >
+                <Image src={logo} sx={{
                 width: 50,
-                
-            }} ></Image>
+                }} ></Image>
+            </a>
             <Box mx='auto' />
-            <Link variant='nav' href='#!' fontSize="50">
-                Profile
-            </Link>
+            <Link variant='nav' href='/add-recipe'><FaPlus /></Link>
         </Flex>
     )
 }

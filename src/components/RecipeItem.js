@@ -4,7 +4,7 @@ import { Box, Card, Flex, Heading, Text } from 'rebass';
 
 import Collapsible from 'react-collapsible';
 
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 class RecipeItem extends React.Component {
     constructor() {
