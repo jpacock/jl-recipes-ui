@@ -49,7 +49,8 @@ function RecipeItem(props){
                                 style={{
                                     "listStyleType": "none"
                                 }}>
-                                {props.recipe.ingredients?.map(ingredient => <li>{ingredient}</li>)}
+                                {props.recipe.ingredients?.map(ingredient => 
+                                    <li><Box my={2}>{ingredient}</Box></li>)}
                             </ul>
                         </Box>
                         <Box hidden={props.recipe.instructions ? false : true}>
@@ -62,7 +63,12 @@ function RecipeItem(props){
                                 style={{
                                     "listStyleType": "none"
                                 }}>
-                                {props.recipe.instructions?.map(instruction => <li>{instruction.step}. {instruction.text}</li>)}
+                                {props.recipe.instructions?.map(instruction =>
+                                    <li><Flex my={2} >
+                                            <Box mx={2} >{instruction.step}.</Box>
+                                            <Box>{instruction.text}</Box>
+                                        </Flex>
+                                    </li>)}
                             </ul>
                         </Box>
                     </Collapsible>
