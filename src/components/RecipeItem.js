@@ -47,13 +47,6 @@ class RecipeItem extends React.Component {
                                         fontSize={[3, 4, 5]}>
                                         {this.props.recipe.name}
                                     </Text>
-                                    {/* <Box flex='auto'></Box> */}
-                                    {/* <Text
-                                        py={1}
-                                        px={2}>
-                                        {this.props.recipe.description}
-                                    </Text> */}
-                                    {/* <Box position='absolute' float='right'></Box> */}
                                 </Flex>
                                 <Box mx='auto' />
                                 <Flex p={4}
