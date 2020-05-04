@@ -17,13 +17,11 @@ class RecipeItem extends React.Component {
     }
 
     toggleCollapsible() {
-        console.log("open or close")
         this.setState(prevState => {
             return {
                 open: !prevState.open
             }
         })
-        console.log(this.state.open)
     }
 
     render() {

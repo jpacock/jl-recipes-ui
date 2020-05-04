@@ -1,7 +1,7 @@
 import React from 'react';
 
 import RecipeItem from './RecipeItem';
-import recipesData from '../data/recipesData';
+// import recipesData from '../data/recipesData';
 
 import { Box, Flex } from 'rebass';
 import { Input } from '@rebass/forms';
@@ -11,20 +11,34 @@ class Recipes extends React.Component {
         super();
 
         this.state = {
-            recipes: recipesData,
+            loading: false,
+            recipes: {},
             searchStr: ""
         }
         this.handleType = this.handleType.bind(this);
     }
 
+    componentDidMount() {
+        this.setState(prevState => Object.assign(prevState, { loading: true }))
+        fetch("https://family-recipes-api.mybluemix.net/api/v1/recipes")
+             .then (response => response.json())
+             .then(data => {
+                console.log(data)
+                data.recipes.map(recipe => console.log(recipe))
+                this.setState(prevState => Object.assign(prevState, {recipes: data.recipes, loading: false}))
+             })
+    }
+
     handleType(char) {
-        console.log("character pressed:", char)
         this.setState(prevState => {
             return Object.assign(prevState, { searchStr: char })
         })
     }
 
     render() {
+        if(this.state.loading || Object.keys(this.state.recipes).length === 0)
+            return <p>loading...</p>
+
         const filteredRecipes = this.state.recipes.filter(recipe => {
             return recipe.name.toLowerCase().indexOf(this.state.searchStr.toLowerCase()) > -1
         }).sort((a, b) => {
@@ -32,7 +46,11 @@ class Recipes extends React.Component {
             else if (a.name < b.name) return -1;
             return 0;
         })
-        const recipes = filteredRecipes.map(recipe => <RecipeItem key={recipe.id} recipe={recipe} />)
+
+        const recipeItemComponents = filteredRecipes.map(recipe => { 
+            console.log(recipe._id)
+            return <RecipeItem key={recipe._id} recipe={recipe} />
+        })
         
         return (
             <Box>
@@ -46,7 +64,7 @@ class Recipes extends React.Component {
                         onChange={e => this.handleType(e.target.value)}
                     />
                 </Flex>
-                {recipes}
+                {recipeItemComponents}
             </Box>
         );
     }
