@@ -62,15 +62,18 @@ class NewRecipe extends React.Component {
                 {
                     _id: 1,
                     name: this.state.name,
-                    ingredients: this.state.ingredients,
-                    instructions: this.state.instructions.map((instruction, idx) => {
-                        return (
-                            {
-                                step: idx + 1,
-                                text: instruction
-                            }
-                        )
-                    })
+                    ingredients: this.state.ingredients
+                        .filter(ingredient => ingredient.length > 0),
+                    instructions: this.state.instructions
+                        .filter(instruction => instruction.length > 0)
+                        .map((instruction, idx) => {
+                            return (
+                                {
+                                    step: idx + 1,
+                                    text: instruction
+                                }
+                            )
+                        })
                 }
             )
         }).then(res => res.json())
@@ -166,7 +169,7 @@ class NewRecipe extends React.Component {
                                 <Input
                                     type="text"
                                     mr={2}
-                                    
+
                                     name={(`ingredients`)}
                                     onChange={e => this.handleChangeIngredient(e, index)}
                                     value={this.state.ingredients[index]}
