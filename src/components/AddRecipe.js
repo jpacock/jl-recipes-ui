@@ -45,7 +45,7 @@ class NewRecipe extends React.Component {
     submit() {
         const notify = () => {
             toast.success('Recipe was added!', {
-                position: toast.POSITION.TOP_CENTER,
+                position: toast.POSITION.TOP_RIGHT,
                 autoClose: 4000,
                 hideProgressBar: true,
                 draggable: true,
