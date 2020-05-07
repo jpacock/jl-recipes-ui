@@ -157,15 +157,16 @@ class NewRecipe extends React.Component {
                         value={this.state.name}
                     />
                 </Box>
-                <Box mt={20}>
+                <Box mt={20} >
                     <Heading>Ingredients</Heading>
                     {
 
                         this.state.ingredients.map((ingredient, index) => (
-                            <Flex>
+                            <Flex mb={2}>
                                 <Input
                                     type="text"
                                     mr={2}
+                                    
                                     name={(`ingredients`)}
                                     onChange={e => this.handleChangeIngredient(e, index)}
                                     value={this.state.ingredients[index]}
@@ -184,7 +185,7 @@ class NewRecipe extends React.Component {
                     {
 
                         this.state.instructions.map((instruction, index) => (
-                            <Flex>
+                            <Flex mb={2}>
                                 <Input
                                     type="text"
                                     mr={2}

@@ -37,6 +37,23 @@ class App extends React.Component {
     render() {
         const theme = {
             ...preset,
+            buttons: {
+                primary: {
+                  color: 'white',
+                  bg: 'primary',
+                },
+                outline: {
+                  color: 'primary',
+                  bg: 'transparent',
+                  boxShadow: 'inset 0 0 0 2px'
+                },
+              },
+
+        }
+        console.log(theme);
+
+        const theme2 = {
+
         }
         
         toast.configure();
