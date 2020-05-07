@@ -1,7 +1,6 @@
 import React from 'react';
 
 import RecipeItem from './RecipeItem';
-// import recipesData from '../data/recipesData';
 
 import { Box, Flex } from 'rebass';
 import { Input } from '@rebass/forms';
@@ -23,8 +22,6 @@ class Recipes extends React.Component {
         fetch("https://family-recipes-api.mybluemix.net/api/v1/recipes")
              .then (response => response.json())
              .then(data => {
-                console.log(data)
-                data.recipes.map(recipe => console.log(recipe))
                 this.setState(prevState => Object.assign(prevState, {recipes: data.recipes, loading: false}))
              })
     }
@@ -48,7 +45,6 @@ class Recipes extends React.Component {
         })
 
         const recipeItemComponents = filteredRecipes.map(recipe => { 
-            console.log(recipe._id)
             return <RecipeItem key={recipe._id} recipe={recipe} />
         })
         

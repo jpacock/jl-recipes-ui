@@ -1,17 +1,21 @@
 import React from 'react';
-import { 
+import {
     BrowserRouter as Router,
     Route,
-    Switch 
+    Switch
 } from 'react-router-dom';
 
 import { ThemeProvider } from 'emotion-theming';
 import preset from '@rebass/preset';
 
+import { toast, ToastContainer, Slide } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css'
 
 import Navbar from './components/Navbar';
 import Recipes from './components/Recipes';
 import AddRecipe from './components/AddRecipe';
+
 
 
 class App extends React.Component {
@@ -34,17 +38,20 @@ class App extends React.Component {
         const theme = {
             ...preset,
         }
+        
+        toast.configure();
+
+
         return (
             <ThemeProvider theme={theme}>
-        
+                <ToastContainer transition={Slide} />
                 <Navbar />
                 <Router>
-                <Switch>
-                    <Route path="/" exact component={Recipes} />
-                    <Route path="/add-recipe" component={AddRecipe} />
-                </Switch>
+                    <Switch>
+                        <Route path="/" exact component={Recipes} />
+                        <Route path="/add-recipe" component={AddRecipe} />
+                    </Switch>
                 </Router>
-
             </ThemeProvider>
         );
     }
