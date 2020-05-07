@@ -172,7 +172,7 @@ class NewRecipe extends React.Component {
                                 >
 
                                 </Input>
-                                <Button textAlign='center' bg='#733632' onClick={e => this.handleRemoveSpecificIngredient(index)}>Remove</Button>
+                                <Button minWidth={95} bg='#733632' onClick={e => this.handleRemoveSpecificIngredient(index)}>Remove</Button>
                             </Flex>
                         )
                         )
@@ -194,7 +194,7 @@ class NewRecipe extends React.Component {
                                 >
 
                                 </Input>
-                                <Button bg='#733632' onClick={e => this.handleRemoveSpecificInstruction(index)}>Remove</Button>
+                                <Button bg='#733632' minWidth={95} onClick={e => this.handleRemoveSpecificInstruction(index)}>Remove</Button>
                             </Flex>
                         )
                         )
