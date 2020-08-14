@@ -54,7 +54,7 @@ class RecipeItem extends React.Component {
                                 </Flex>
                             </Flex>
                         }>
-                            <Box hidden={this.props.recipe.ingredients ? false : true}>
+                            <Box hidden={this.props.recipe.recipeMetadata.ingredients ? false : true}>
                                 <Heading
                                     as='h1'
                                     p={2}
@@ -65,11 +65,11 @@ class RecipeItem extends React.Component {
                                     style={{
                                         "listStyleType": "none"
                                     }}>
-                                    {this.props.recipe.ingredients?.map(ingredient =>
+                                    {this.props.recipe.recipeMetadata.ingredients?.map(ingredient =>
                                         <li key={ingredient}><Box my={2}>{ingredient}</Box></li>)}
                                 </ul>
                             </Box>
-                            <Box hidden={this.props.recipe.instructions ? false : true}>
+                            <Box hidden={this.props.recipe.recipeMetadata.instructions ? false : true}>
                                 <Heading
                                     as='h1'
                                     p={2}>
@@ -79,7 +79,7 @@ class RecipeItem extends React.Component {
                                     style={{
                                         "listStyleType": "none"
                                     }}>
-                                    {this.props.recipe.instructions?.map(instruction =>
+                                    {this.props.recipe.recipeMetadata.instructions?.map(instruction =>
                                         <li key={instruction.step}><Flex my={2} >
                                             <Box minWidth="8px">{instruction.step}.</Box>
                                             <Box padding="0px 10px">{instruction.text}</Box>

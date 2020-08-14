@@ -1,14 +1,13 @@
 import React from 'react';
-
-import RecipeItem from './RecipeItem';
-
 import { Box, Flex } from 'rebass';
 import { Input } from '@rebass/forms';
+
+import RecipeItem from './RecipeItem';
 
 class Recipes extends React.Component {
     constructor() {
         super();
-
+        
         this.state = {
             loading: false,
             recipes: {},
@@ -18,11 +17,15 @@ class Recipes extends React.Component {
     }
 
     componentDidMount() {
+        const { params } = this.props.match;
+        const category = params.category;
+        console.log(category);
         this.setState(prevState => Object.assign(prevState, { loading: true }))
-        fetch("https://family-recipes-api.mybluemix.net/api/v1/recipes")
+        fetch(`http://familyrecipes.com:8000/recipes/categories/${category}`)
              .then (response => response.json())
              .then(data => {
-                this.setState(prevState => Object.assign(prevState, {recipes: data.recipes, loading: false}))
+                console.log(data);
+                this.setState(prevState => Object.assign(prevState, {recipes: data, loading: false}))
              })
     }
 
@@ -45,7 +48,7 @@ class Recipes extends React.Component {
         })
 
         const recipeItemComponents = filteredRecipes.map(recipe => { 
-            return <RecipeItem key={recipe._id} recipe={recipe} />
+            return <RecipeItem key={recipe.name} recipe={recipe} />
         })
         
         return (

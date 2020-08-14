@@ -12,10 +12,10 @@ import { toast, ToastContainer, Slide } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css'
 
+import AddRecipe from './components/AddRecipe';
+import Categories from './components/Categories';
 import Navbar from './components/Navbar';
 import Recipes from './components/Recipes';
-import AddRecipe from './components/AddRecipe';
-
 
 
 class App extends React.Component {
@@ -65,8 +65,10 @@ class App extends React.Component {
                 <Navbar />
                 <Router>
                     <Switch>
-                        <Route path="/" exact component={Recipes} />
+                        <Route path="/" exact component={Categories} />
                         <Route path="/add-recipe" component={AddRecipe} />
+                        <Route path="/recipes/categories" exact component={Categories} />
+                        <Route path="/recipes/categories/:category" component={Recipes} />
                     </Switch>
                 </Router>
             </ThemeProvider>
