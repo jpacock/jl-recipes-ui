@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Flex} from 'rebass';
+import { Flex } from 'rebass';
+
+import './Categories.scss';
 
 class Categories extends React.Component {
   constructor() {
@@ -8,29 +10,33 @@ class Categories extends React.Component {
     this.state = {
       categories: ['Appetizers', 'Cocktails', 'Mains',]
     };
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick(category) {
+    window.open(`/recipes/categories/${category}`);
   }
 
   render() {
     const categoryItems = this.state.categories.map(category => (
-      <Link key={category}
-        to={{ pathname: `/recipes/categories/${category.toLowerCase()}` }}>
-        <Flex
-          width="100%"
-          bg='white'
-          color='#eeeeee'
-          textAlign="center"
-          color="darkgray"
-          minHeight='80px'
-          verticalAlign='middle'
-          justifyContent='center'
-          alignItems='center'>
-          {category}
-        </Flex>
-      </Link>
+      <div className="category__list__item" key={category}>
+        <Link 
+          to={`/recipes/categories/${category.toLowerCase()}`}
+          style={{ textDecoration: 'none' }}>
+        <div className="category__list__item__content"> 
+          <div className="category__list__item__vr" /> 
+          <div className="category__list__item__label">
+            {category}
+          </div>
+        </div>
+        </Link>
+        <div className="category__list__item__hr" />
+      </div>
     ));
 
     return (
       <Flex
+        className="container"
         width="100%"
         flexDirection="column"
         alignItems='center'

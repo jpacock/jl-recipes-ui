@@ -21,7 +21,7 @@ class Recipes extends React.Component {
         const category = params.category;
         console.log(category);
         this.setState(prevState => Object.assign(prevState, { loading: true }))
-        fetch(`http://familyrecipes.com:8000/recipes/categories/${category}`)
+        fetch(`https://family-recipes-api.mybluemix.net/recipes/categories/${category}`)
              .then (response => response.json())
              .then(data => {
                 console.log(data);

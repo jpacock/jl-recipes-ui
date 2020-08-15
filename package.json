@@ -22,6 +22,7 @@
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.4.1",
     "emotion-theming": "^10.0.27",
+    "node-sass": "^4.14.1",
     "react": "^16.13.0",
     "react-beautiful-dnd": "^13.0.0",
     "react-bootstrap": "^1.0.1",
@@ -29,7 +30,7 @@
     "react-dom": "^16.13.0",
     "react-icons": "^3.10.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.3",
     "react-toast-notifications": "^2.4.0",
     "react-toastify": "^6.0.0-rc.2-1",
     "rebass": "^4.0.7",
@@ -47,5 +48,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
   }
 }
