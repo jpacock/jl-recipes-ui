@@ -15,6 +15,7 @@ import Categories from './components/Categories';
 import Navbar from './components/Navbar';
 import Recipes from './components/Recipes';
 import SlideDrawer from './components/SlideDrawer';
+import RecipeDetails from './components/RecipeDetails';
 
 class App extends React.Component {
   state = { drawerOpen: false }
@@ -81,6 +82,7 @@ class App extends React.Component {
           <Switch>
             <Route path="/" exact component={Categories} />
             <Route path="/add-recipe" component={AddRecipe} />
+            <Route path="/recipes/:name" exact component = {RecipeDetails} />
             <Route path="/recipes/categories" exact component={Categories} />
             <Route path="/recipes/categories/:category" component={Recipes} />
           </Switch>
