@@ -6,12 +6,13 @@ $s-max: 70;
 $l-min: 30;
 $l-max: 90;
 
-@for $i from 1 through 100 {
-  .category__list__item:nth-child(#{$i}) .category__list__item__vr {
-    background-color: hsl(random(360),$s-min+random($s-max+-$s-min),$l-min+random($l-max+-$l-min));
+$colorsi:(#f29e4c, #f1c453, #efea5a, #b9e769, #83e377, #16db93, #0db39e, #048ba8, #2c699a, #54478c); 
+
+@for $i from 1 through length($colorsi) {
+  .category__list__item:nth-child(#{length($colorsi)}n+#{$i}) .category__list__item__vr {
+   background-color: nth($colorsi, $i);
   }
-}
-      
+}    
 
 .category__list__item {
   display: inline-block;
@@ -32,7 +33,7 @@ $l-max: 90;
   }
 
   &__label {
-    color: $neutral-5;
+    color: $neutral-6;
     font-family: arial;
     font-weight: 600;
     font-size:30px;

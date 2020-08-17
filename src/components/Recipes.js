@@ -3,11 +3,12 @@ import { Box, Flex } from 'rebass';
 import { Input } from '@rebass/forms';
 
 import RecipeItem from './RecipeItem';
+import Spinner from './Spinner';
 
 class Recipes extends React.Component {
     constructor() {
         super();
-        
+
         this.state = {
             loading: false,
             recipes: {},
@@ -21,12 +22,21 @@ class Recipes extends React.Component {
         const category = params.category;
         console.log(category);
         this.setState(prevState => Object.assign(prevState, { loading: true }))
-        fetch(`https://family-recipes-api.mybluemix.net/recipes/categories/${category}`)
-             .then (response => response.json())
-             .then(data => {
-                console.log(data);
-                this.setState(prevState => Object.assign(prevState, {recipes: data, loading: false}))
-             })
+        if (category === 'all') {
+            fetch('https://family-recipes-api.mybluemix.net/recipes')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    this.setState(prevState => Object.assign(prevState, { recipes: data, loading: false }))
+                })
+        } else {
+            fetch(`https://family-recipes-api.mybluemix.net/recipes/categories/${category}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    this.setState(prevState => Object.assign(prevState, { recipes: data, loading: false }))
+                })
+        }
     }
 
     handleType(char) {
@@ -36,8 +46,26 @@ class Recipes extends React.Component {
     }
 
     render() {
-        if(this.state.loading || Object.keys(this.state.recipes).length === 0)
-            return <p>loading...</p>
+        if (this.state.loading || Object.keys(this.state.recipes).length === 0) {
+            return (
+                <div>
+                    <Input
+                        flex='1'
+                        color='lightgray'
+                        id='email'
+                        margin="0px 10px"
+                        name='email'
+                        placeholder='Find Recipe'
+                        onChange={e => this.handleType(e.target.value)}
+                    />
+                    <Flex
+                        width="100%"
+                        justifyContent="center">
+                        <Spinner />
+                    </Flex>
+                </div>
+            )
+        }
 
         const filteredRecipes = this.state.recipes.filter(recipe => {
             return recipe.recipeMetadata.displayName.toLowerCase().indexOf(this.state.searchStr.toLowerCase()) > -1
@@ -47,13 +75,13 @@ class Recipes extends React.Component {
             return 0;
         })
 
-        const recipeItemComponents = filteredRecipes.map(recipe => { 
+        const recipeItemComponents = filteredRecipes.map(recipe => {
             return <RecipeItem key={recipe.name} recipe={recipe} />
         })
-        
+
         return (
             <Box>
-                <Flex my = {2} >
+                <Flex my={2} >
                     <Input
                         flex='1'
                         color='lightgray'

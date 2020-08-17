@@ -26,12 +26,12 @@ class RecipeItem extends React.Component {
 
     render() {
         return (
-            <Box>
+            <Box fontFamily='Arial'>
                 <Flex>
                     <Card flex='1'
                         my='1'>
                         <Collapsible open={this.state.open} transitionTime={100} trigger={
-                            <Flex bg='#326273'
+                            <Flex bg='#264653'
                                 color='#eeeeee'
                                 alignItems='center'
                                 onClick={e => this.toggleCollapsible()}>

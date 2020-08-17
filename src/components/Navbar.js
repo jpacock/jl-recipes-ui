@@ -8,7 +8,7 @@ function Navbar(props) {
     return (
         <Flex
             px={2}
-            color='#E39774'
+            color='#e76f51'
             alignItems='center'
             minHeight='80px'>
             <FaBars style={{ position: "absolute", paddingLeft: "25px", left: 10 }} onClick={props.toggle} />
@@ -18,7 +18,7 @@ function Navbar(props) {
                     textDecoration: "none"
                 }}>
                 <div style={{
-                    color: "#E39774",
+                    color: "#e76f51",
                     fontFamily: "Snell Roundhand, cursive",
                     fontSize: "40px",
                     fontWeight: 700

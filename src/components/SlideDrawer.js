@@ -7,7 +7,18 @@ export default class SlideDrawer extends React.Component {
   constructor() {
     super();
     this.state = {
-      items: ['Appetizers', 'Cocktails', 'Mains',]
+      items: [
+        'Cocktails',
+        'Appetizers',
+        'Soups',
+        'Mains',
+        'Sides/Vegetables',
+        "Sauces",
+        "Breakfast",
+        "Snacks",
+        "Desserts",
+        "All"
+      ]
     };
     this.onClick = this.onClick.bind(this);
   }

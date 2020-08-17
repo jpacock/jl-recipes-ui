@@ -8,11 +8,16 @@ class Categories extends React.Component {
     super();
     this.state = {
       categories: [
-        'Appetizers',
-        'Breakfast',
-        'Lunch',
-        'Dinner',
         'Cocktails',
+        'Appetizers',
+        'Soups',
+        'Mains',
+        'Sides/Vegetables',
+        "Sauces",
+        "Breakfast",
+        "Snacks",
+        "Desserts",
+        "All"
       ]
     };
     this.onClick = this.onClick.bind(this);
