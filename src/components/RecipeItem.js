@@ -43,7 +43,7 @@ class RecipeItem extends React.Component {
                                     <Text
                                         p={3}
                                         fontSize={[3, 4, 5]}>
-                                        {this.props.recipe.name}
+                                        {this.props.recipe.recipeMetadata.displayName}
                                     </Text>
                                 </Flex>
                                 <Box mx='auto' />

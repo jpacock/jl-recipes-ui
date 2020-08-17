@@ -116,12 +116,6 @@ class NewRecipe extends React.Component {
     })
   }
 
-  handleAddInstruction() {
-    this.setState(prevState => {
-      return { instructions: prevState.instructions.concat('') }
-    })
-  }
-
   handleRemoveSpecificIngredient(idx) {
     const ingredients = [...this.state.ingredients];
     ingredients.splice(idx, 1);

@@ -1,26 +1,32 @@
 import React from 'react';
-import { Flex, Box, Image, Link } from 'rebass';
-import logo from './logo.png'
+import { Flex, Box } from 'rebass';
 
-import {FaBars} from 'react-icons/fa'
+import { FaBars } from 'react-icons/fa'
 
 
-function Navbar() {
+function Navbar(props) {
     return (
         <Flex
             px={2}
             color='#E39774'
-            // bg=''
             alignItems='center'
             minHeight='80px'>
-                <Box mx='auto' />
-            <a href="/" >
-                <Image src={logo} sx={{
-                width: 50,
-                }} ></Image>
-            </a>
+            <FaBars style={{ position: "absolute", paddingLeft: "25px", left: 10 }} onClick={props.toggle} />
             <Box mx='auto' />
-            <FaBars style ={{position: "absolute", paddingRight: "25px", right: 20}}/>
+            {/* middle icon */}
+            <a href="/" style={{
+                    textDecoration: "none"
+                }}>
+                <div style={{
+                    color: "#E39774",
+                    fontFamily: "Snell Roundhand, cursive",
+                    fontSize: "40px",
+                    fontWeight: 700
+                }}>Recipes</div>
+            </a>
+
+            <Box mx='auto' />
+            
         </Flex>
     )
 }

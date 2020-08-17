@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Flex } from 'rebass';
 
 import './Categories.scss';
@@ -8,7 +7,13 @@ class Categories extends React.Component {
   constructor() {
     super();
     this.state = {
-      categories: ['Appetizers', 'Cocktails', 'Mains',]
+      categories: [
+        'Appetizers',
+        'Breakfast',
+        'Lunch',
+        'Dinner',
+        'Cocktails',
+      ]
     };
     this.onClick = this.onClick.bind(this);
   }
@@ -20,8 +25,8 @@ class Categories extends React.Component {
   render() {
     const categoryItems = this.state.categories.map(category => (
       <div className="category__list__item" key={category}>
-        <Link 
-          to={`/recipes/categories/${category.toLowerCase()}`}
+        <a 
+          href={`/recipes/categories/${category.toLowerCase()}`}
           style={{ textDecoration: 'none' }}>
         <div className="category__list__item__content"> 
           <div className="category__list__item__vr" /> 
@@ -29,7 +34,7 @@ class Categories extends React.Component {
             {category}
           </div>
         </div>
-        </Link>
+        </a>
         <div className="category__list__item__hr" />
       </div>
     ));
