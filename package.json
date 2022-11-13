@@ -30,7 +30,7 @@
     "react-dom": "^16.13.0",
     "react-icons": "^3.10.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.4.3",
+    "react-scripts": "^5.0.1",
     "react-toast-notifications": "^2.4.0",
     "react-toastify": "^6.0.0-rc.2-1",
     "rebass": "^4.0.7",
